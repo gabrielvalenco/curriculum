@@ -50,6 +50,14 @@ nav ul li a:hover {
     transform: scale(1.1); /* Leve ampliação */
 }
 
+.nav-link.active {
+    color: #10B981; /* Altere a cor para o destaque */
+    font-weight: 600; /* Torna o link em negrito */
+    text-decoration: underline; /* Adiciona um sublinhado */
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+}
+
 /* Efeito de iluminação contínua para o hero container */
 .hero-container {
     text-align: center;
