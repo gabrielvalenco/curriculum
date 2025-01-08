@@ -29,17 +29,17 @@ nav {
     padding: 0 20px;
     min-height: 10vh;
     box-shadow: 0 0 10px rgba(31, 41, 55, 0.1); /* Sombra mais suave */
-    background-color: #FFFFFF;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 15px; /* Espaçamento entre os itens */
+    gap: 25px; /* Espaçamento entre os itens */
 }
 
 nav ul li a {
     color: #4ADE80; /* Verde claro */
+    font-size: 17px;
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease; /* Suaviza o hover */
@@ -50,25 +50,44 @@ nav ul li a:hover {
     transform: scale(1.1); /* Leve ampliação */
 }
 
-
-/* HERO */
+/* Efeito de iluminação contínua para o hero container */
 .hero-container {
     text-align: center;
     padding: 100px 20px;
-    background-color: #1F2937; /* Cinza escuro */
-    color: #F9FAFB; /* Texto branco quebrado */
+    background: linear-gradient(45deg, #1F2937, #374151, #1F2937); /* Gradiente inicial */
+    background-size: 200% 200%; /* Permite o movimento do gradiente */
+    color: white;
+    animation: lightPulse 6s infinite; /* Animação contínua */
 }
 
 .hero-container h1 {
-    font-size: 3rem; /* Tamanho grande para o título principal */
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-container h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .hero-container p {
     font-size: 1.2rem;
     margin-top: 10px;
-    color: #D1D5DB; /* Texto secundário */
+    color: #D1D5DB;
+}
+
+/* Animação de iluminação */
+@keyframes lightPulse {
+    0% {
+        background-position: 0% 50%; /* Começa com o gradiente no início */
+    }
+    50% {
+        background-position: 100% 50%; /* Move o gradiente para a direita */
+    }
+    100% {
+        background-position: 0% 50%; /* Retorna ao início */
+    }
 }
 
 /* SCROLL */
@@ -99,11 +118,10 @@ nav ul li a:hover {
 .services-container {
     text-align: center;
     padding: 80px 20px;
-    background-color: #F9FAFB;
 }
 
 .services-container h1 {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: #1F2937;
     font-size: 2.5rem;
     font-weight: 700;
@@ -136,6 +154,12 @@ nav ul li a:hover {
     width: 150px;
     height: auto;
     margin-bottom: 10px; /* Espaçamento com o texto */
+    filter: brightness(85%); /* Escurece a imagem */
+    transition: filter 0.3s ease; /* Suaviza a transição de cor */
+}
+
+.language-item img:hover {
+    filter: brightness(100%); /* Restaura a cor original ao passar o mouse */
 }
 
 .language-item p {
@@ -144,11 +168,16 @@ nav ul li a:hover {
     font-size: 1.1rem;
 }
 
+
 /* PROJECTS */
 .projects-container {
     padding: 50px 20px;
-    background-color: #FFFFFF; /* Fundo branco para contraste */
     text-align: center;
+    background-image: url('../image/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
 }
 
 .projects-container h1 {
@@ -168,8 +197,9 @@ nav ul li a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Leve sombra para destaque */
     border-radius: 10px;
     overflow: hidden; /* Para bordas arredondadas */
-    background-color: #F9FAFB; /* Fundo claro */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    padding: 40px 30px;
 }
 
 .project-item:hover {
@@ -213,6 +243,36 @@ nav ul li a:hover {
     background-color: #10B981; /* Botão verde mais escuro no hover */
 }
 
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #4ADE80;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #10B981;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* FOOTER */
 footer {
@@ -224,4 +284,19 @@ footer {
     bottom: 0;
     width: 100%;
     font-size: 0.9rem;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: #4ADE80;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #10B981;
 }
