@@ -91,6 +91,50 @@ nav ul li a:hover {
     margin: 0 20px; /* Adiciona uma margem lateral para dar espaçamento em telas pequenas */
 }
 
+.experiences-container {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 960px;
+    margin: 20px auto;
+}
+
+.experiences-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #1F2937;
+}
+
+.experiences-container h1::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #4ADE80;
+    margin: 30px auto 0;
+    border-radius: 2px;
+}
+
+.experiences-item {
+    margin-bottom: 20px;
+}
+
+.experiences-item h3 {
+    font-size: 1.5rem;
+    color: #4ADE80;
+    margin-bottom: 5px;
+}
+
+.experiences-item p {
+    font-size: 1rem;
+    color: #1F2937;
+    margin-bottom: 5px;
+}
+
+.experiences-item strong {
+    font-weight: bold;
+}
+
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
